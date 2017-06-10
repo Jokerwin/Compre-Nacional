@@ -11,5 +11,5 @@ deploy:
   app: javaeekickoff
   domain: omnifacessnapha
   on:
-    repo: javaeekickoff/java-ee-kickoff-app
+    repo: Jokerwin/Compre-Nacional
   skip_cleanup: true

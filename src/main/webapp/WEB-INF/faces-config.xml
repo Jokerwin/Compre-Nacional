@@ -7,8 +7,8 @@
 >
 	<application>
 		<locale-config>
-			<default-locale>en</default-locale>
-			<supported-locale>nl</supported-locale>
+			<default-locale>es</default-locale>
+			<supported-locale>en</supported-locale>
 		</locale-config>
 		<message-bundle>org.example.kickoff.i18n.ApplicationBundle</message-bundle>
 		<resource-bundle>
