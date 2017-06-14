@@ -9,18 +9,18 @@
 		<maven>3.0.0</maven>
 	</prerequisites>
 
-	<groupId>org.example.kickoff</groupId>
-	<artifactId>java-ee-kickoff-app</artifactId>
+	<groupId>com.dacs.comprenacional</groupId>
+	<artifactId>compre-nacional</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>Java EE kickoff app</name>
-	<url>https://github.com/javaeekickoff/java-ee-kickoff-app</url>
+	<name>Compre Nacional</name>
+	<url>https://github.com/Jokerwin/Compre-Nacional</url>
 
 	<scm>
-		<url>https://github.com/javaeekickoff/java-ee-kickoff-app</url>
-		<connection>scm:git:git@github.com:javaeekickoff/java-ee-kickoff-app.git</connection>
-		<developerConnection>scm:git:git@github.com:javaeekickoff/java-ee-kickoff-app.git</developerConnection>
+		<url>https://github.com/Jokerwin/Compre-Nacional</url>
+		<connection>scm:git:git@github.com:Jokerwin/Compre-Nacional.git</connection>
+		<developerConnection>scm:git:git@github.com:Jokerwin/Compre-Nacional.git</developerConnection>
 	</scm>
 
 	<properties>
