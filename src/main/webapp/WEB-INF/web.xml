@@ -5,7 +5,7 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	version="3.1"
 >
-	<display-name>Kickoff Example</display-name>
+	<display-name>Compre Nacional</display-name>
 
 
 	<!-- Standard JSF settings. -->
@@ -177,9 +177,9 @@
 		<name>java:app/kickoff/MailSession</name>
 		<transport-protocol>smtps</transport-protocol>
 		<host>smtp.gmail.com</host>
-		<user>kickoff@example.org</user> <!-- This is an example! -->
-		<password>password</password> <!-- This is an example! -->
-		<from>kickoff@example.org</from> <!-- This is an example! -->
+		<user>rz123prueba@gmail.com</user> <!-- This is an example! -->
+		<password>477321tel</password> <!-- This is an example! -->
+		<from>rz123prueba@gmail.com</from> <!-- This is an example! -->
 		<property><name>mail.smtp.auth</name><value>true</value></property>
 		<property><name>mail.smtp.starttls.enable</name><value>true</value></property>
 		<property><name>mail.smtp.host</name><value>smtp.gmail.com</value></property>
