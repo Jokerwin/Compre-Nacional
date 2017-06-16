@@ -6,8 +6,8 @@
 		Note that the initial settings can also be specified in /WEB-INF/web.xml.
 	</comment>
 
-	<entry key="className">org.h2.jdbcx.JdbcDataSource</entry>
-	<entry key="url">jdbc:h2:mem:test</entry>
-	<entry key="user">sa</entry>
-	<entry key="password">sa</entry>
+	<entry key="className">com.mysql.jdbc.jdbc2.optional.MysqlXADataSource</entry>
+	<entry key="url">jdbc:mysql://localhost:3306/comprenacional</entry>
+	<entry key="user">root</entry>
+	<entry key="password">root</entry>
 </properties>
