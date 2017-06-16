@@ -1,1 +1,1 @@
-org.example.kickoff.config.DataSourceStagedPropertiesFileLoader
+com.dacs.comprenacional.config.DataSourceStagedPropertiesFileLoader
