@@ -7,9 +7,7 @@
 >
 	<display-name>Compre Nacional</display-name>
 
-
 	<!-- Standard JSF settings. -->
-
 	<context-param>
 		<param-name>javax.faces.FACELETS_BUFFER_SIZE</param-name>
 		<param-value>65535</param-value> <!-- 64KB -->
@@ -35,9 +33,7 @@
 		<param-value>true</param-value>
 	</context-param>
 
-
 	<!-- Mojarra/RI specific settings. -->
-
 	<context-param>
 		<param-name>com.sun.faces.defaultResourceMaxAge</param-name>
 		<param-value>4838400000</param-value> <!-- 8 weeks in millis. -->
@@ -47,17 +43,13 @@
 		<param-value>false</param-value> <!-- Prevent duplicate javax.faces.ViewState element IDs. -->
 	</context-param>
 
-
 	<!-- OmniFaces specific settings. -->
-
 	<context-param>
 		<param-name>org.omnifaces.FACES_VIEWS_SCAN_PATHS</param-name>
 		<param-value>/*.xhtml</param-value> <!-- Enable extensionless URLs on entire webapp. -->
 	</context-param>
 
-
 	<!-- PrimeFaces specific settings. -->
-
 	<context-param>
 		<param-name>primefaces.FONT_AWESOME</param-name>
 		<param-value>true</param-value> <!-- Enable referencing Font Awesome icons in CSS. -->
@@ -71,9 +63,7 @@
 		<param-value>true</param-value> <!-- Renders bean validation metadata (@NotNull/@Size/@Min/@Max) as HTML element attributes. -->
 	</context-param>
 
-
 	<!-- Servlets. -->
-
 	<servlet>
 		<servlet-name>facesServlet</servlet-name>
 		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
@@ -85,10 +75,8 @@
 		<url-pattern>*.xhtml</url-pattern>
 	</servlet-mapping>
 
-
 	<!-- Filters. -->
 	<!-- NOTE: the current alphabetical ordering of filter name in filter mappings is pure conicidence! The ordering of the mappings is really significant! -->
-
  	<filter>
 		<filter-name>characterEncodingFilter</filter-name>
 		<filter-class>org.omnifaces.filter.CharacterEncodingFilter</filter-class>
@@ -119,7 +107,6 @@
 
 
 	<!-- Session configuration. -->
-
 	<session-config>
 		<cookie-config>
 			<http-only>true</http-only> <!-- Prevent client side scripting from accessing/manipulating session cookie. -->
@@ -129,7 +116,6 @@
 
 
 	<!-- Welcome files and error pages. -->
-
 	<welcome-file-list>
 		<welcome-file>home</welcome-file> <!-- Eclipse may warn that this file cannot be found, but we actually use extensionless mapping. -->
 	</welcome-file-list>
@@ -157,9 +143,8 @@
 
 
 	<!-- Resources -->
-
 	<data-source>
-		<name>java:app/kickoff/DataSource</name>
+		<name>java:app/cliente/DataSource</name>
 		<class-name>org.omnifaces.persistence.datasource.SwitchableXADataSource</class-name>
 		<property>
 			<name>configFile</name>
@@ -188,7 +173,6 @@
 
 
 	<!-- Security constraints and roles. -->
-
 	<security-constraint>
 		<display-name>Restrict direct access to the /resources folder.</display-name> <!-- We could have used javax.faces.WEBAPP_RESOURCES_DIRECTORY, but this doesn't cover resources from JARs. -->
 		<web-resource-collection>
@@ -240,7 +224,6 @@
 
 
 	<!-- New mime mappings not already defined by server. -->
-
 	<mime-mapping>
 		<extension>otf</extension>
 		<mime-type>application/x-font-opentype</mime-type>

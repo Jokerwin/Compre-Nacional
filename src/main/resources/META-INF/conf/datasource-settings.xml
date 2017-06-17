@@ -7,7 +7,7 @@
 	</comment>
 
 	<entry key="className">com.mysql.jdbc.jdbc2.optional.MysqlXADataSource</entry>
-	<entry key="url">jdbc:mysql://localhost:3306/comprenacional</entry>
-	<entry key="user">root</entry>
-	<entry key="password">root</entry>
+	<entry key="url">jdbc:mysql://167.250.5.18:3306/comprenacional</entry>
+	<entry key="user">jokerw_root</entry>
+	<entry key="password">jokerw_root</entry>
 </properties>
