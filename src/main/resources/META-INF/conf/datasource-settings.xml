@@ -7,7 +7,7 @@
 	</comment>
 
 	<entry key="className">com.mysql.jdbc.jdbc2.optional.MysqlXADataSource</entry>
-	<entry key="url">jdbc:mysql://sql9.freesqldatabase.com:3306/sql9181492?autoReconnect=true</entry>
-	<entry key="user">sql9181492</entry>
-	<entry key="password">S8bsh3NPC4</entry>
+	<entry key="url">jdbc:mysql://localhost:3306/comprenacional?autoReconnect=true</entry>
+	<entry key="user">root</entry>
+	<entry key="password">root</entry>
 </properties>

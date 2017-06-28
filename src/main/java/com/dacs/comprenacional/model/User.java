@@ -178,7 +178,7 @@ public class User extends TimestampedEntity<Long> {
 	}
 
 	@Transient
-	public List<String> getRolesAsStrings() {
+		public List<String> getRolesAsStrings() {
 		return getRolesAsStream().map(Role::name).collect(toList());
 	}
 

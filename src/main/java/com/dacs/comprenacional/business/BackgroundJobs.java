@@ -12,7 +12,7 @@ import com.dacs.comprenacional.business.service.LoginTokenService;
 public class BackgroundJobs {
 
 	@PersistenceContext
-	private EntityManager entityManager;
+	private EntityManager Manager;
 
 	@Inject
 	private LoginTokenService loginTokenService;
