@@ -15,22 +15,16 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Stream;
 
-import javax.persistence.CollectionTable;
-import javax.persistence.Column;
-import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 import com.dacs.comprenacional.model.validator.Email;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.omnifaces.persistence.model.TimestampedEntity;
 
 @Entity
+
 public class User extends TimestampedEntity<Long> {
 
 	private static final long serialVersionUID = 1L;
@@ -38,9 +32,11 @@ public class User extends TimestampedEntity<Long> {
 	@Id @GeneratedValue(strategy = IDENTITY)
 	private Long id;
 
+	@JsonIgnore
 	@Column
 	private @NotNull Instant created;
 
+	@JsonIgnore
 	@Column
 	private @NotNull Instant lastModified;
 
@@ -54,6 +50,7 @@ public class User extends TimestampedEntity<Long> {
 	/*
 	 * TODO: implement.
 	 */
+	@JsonIgnore
 	@Column
 	private boolean emailVerified = true; // For now.
 
@@ -63,17 +60,25 @@ public class User extends TimestampedEntity<Long> {
 	 * this by using a list to force that the relation is really lazily-loaded and to prevent a large number of
 	 * additional queries to the database.
 	 */
+	@JsonIgnore
+	@OneToMany(cascade = ALL, mappedBy = "user", orphanRemoval = true)
+	private List<Pedido> pedidos = new ArrayList<>();
+
+	@JsonIgnore
 	@OneToMany(mappedBy = "user", fetch = LAZY, cascade = ALL, orphanRemoval = true)
 	private final Set<Credentials> credentials = new HashSet<>(1);
 
+	@JsonIgnore
 	@OneToMany(cascade = ALL, mappedBy = "user", orphanRemoval = true)
 	@Cache(usage = TRANSACTIONAL)
 	private List<LoginToken> loginTokens = new ArrayList<>();
 
+	@JsonIgnore
 	@Column(name = "group_name")
 	@Enumerated(STRING) @ElementCollection(fetch = EAGER) @CollectionTable(name = "user_group")
 	private List<Group> groups = new ArrayList<>();
 
+	@JsonIgnore
 	@Column
 	private Instant lastLogin;
 
@@ -172,13 +177,15 @@ public class User extends TimestampedEntity<Long> {
 		this.lastLogin = lastLogin;
 	}
 
+	@JsonIgnore
 	@Transient
 	public Stream<Role> getRolesAsStream() {
 		return groups.stream().flatMap(g -> g.getRoles().stream()).distinct();
 	}
 
+	@JsonIgnore
 	@Transient
-		public List<String> getRolesAsStrings() {
+	public List<String> getRolesAsStrings() {
 		return getRolesAsStream().map(Role::name).collect(toList());
 	}
 

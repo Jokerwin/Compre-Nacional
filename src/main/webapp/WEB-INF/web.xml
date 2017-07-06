@@ -179,6 +179,7 @@
 			<web-resource-name>The /resources folder.</web-resource-name>
 			<url-pattern>/resources/*</url-pattern>
 		</web-resource-collection>
+		<!-- No roles -->
 		<auth-constraint />
 	</security-constraint>
 
@@ -213,6 +214,7 @@
 	</security-constraint>
 
 	<security-role>
+		<description>Ver paginas acceso publico.</description>
 		<role-name>VIEW_USER_PAGES</role-name>
 	</security-role>
 	<security-role>

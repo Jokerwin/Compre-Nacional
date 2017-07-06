@@ -1,12 +1,17 @@
 package com.dacs.comprenacional.model;
 
+import org.hibernate.annotations.Cache;
 import org.omnifaces.persistence.model.BaseEntity;
 import org.omnifaces.persistence.model.TimestampedEntity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static javax.persistence.CascadeType.ALL;
+import static org.hibernate.annotations.CacheConcurrencyStrategy.TRANSACTIONAL;
 
 /**
  * Created by grego on 21/06/17.
@@ -18,6 +23,11 @@ public class Producto extends BaseEntity<Long> {
 
     @Id
     private long id;
+
+    @OneToMany(cascade=CascadeType.ALL)
+    @JoinTable(name="pedido_producto", joinColumns={@JoinColumn(name ="productoId", referencedColumnName ="id")},
+            inverseJoinColumns={@JoinColumn(name ="pedidoId", referencedColumnName ="id")})
+    private List<Pedido> pedidos;
 
     @Column
     private @NotNull String nombre;
