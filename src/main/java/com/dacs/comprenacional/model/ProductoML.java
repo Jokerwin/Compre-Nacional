@@ -2,21 +2,15 @@ package com.dacs.comprenacional.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.hibernate.annotations.Cache;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import javax.xml.bind.annotation.XmlRootElement;
-import java.time.Instant;
-import java.util.List;
-
-import static javax.persistence.GenerationType.IDENTITY;
-import static org.hibernate.annotations.CacheConcurrencyStrategy.TRANSACTIONAL;
+import java.util.LinkedList;
 
 /**
  * Created by Jose on 4/7/2017.
  */
-@Entity
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonPropertyOrder({
         "id",
@@ -33,6 +27,17 @@ public class ProductoML {
     @Column
     private @NotNull
     String title;
+
+    @Column
+    private LinkedList<Picture> pictures;
+
+    public LinkedList<Picture> getPictures() {
+        return pictures;
+    }
+
+    public void setPictures(LinkedList<Picture> pictures) {
+        this.pictures = pictures;
+    }
 
     @Column
     float price;

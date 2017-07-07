@@ -159,7 +159,7 @@
 	</data-source>
 
 	<mail-session>
-		<name>java:app/kickoff/MailSession</name>
+		<name>java:app/cliente/MailSession</name>
 		<transport-protocol>smtps</transport-protocol>
 		<host>smtp.gmail.com</host>
 		<user>rz123prueba@gmail.com</user> <!-- This is an example! -->
@@ -168,7 +168,8 @@
 		<property><name>mail.smtp.auth</name><value>true</value></property>
 		<property><name>mail.smtp.starttls.enable</name><value>true</value></property>
 		<property><name>mail.smtp.host</name><value>smtp.gmail.com</value></property>
-		<property><name>mail.smtp.port</name><value>587</value></property>
+		<property><name>mail.smtp.port</name><value>465</value></property>
+		<property><name>mail.smtp.socketFactory.class</name><value>javax.net.ssl.SSLSocketFactory</value></property>
 	</mail-session>
 
 

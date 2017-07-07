@@ -14,7 +14,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 import static org.hibernate.annotations.CacheConcurrencyStrategy.TRANSACTIONAL;
 
 /**
- * Created by grego on 22/06/17.
+ * Created by José on 22/06/17.
  */
 @Entity
 public class Pedido extends TimestampedEntity {

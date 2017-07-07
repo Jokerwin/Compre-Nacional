@@ -11,4 +11,17 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:k="http://kickoff.example.org/ui"
 >
+	<ui:define name="content">
+		<ui:repeat value="#{productBacking.products}" var="product">
+			<p:panelGrid columns="1" id="productsTable" style="float:left; margin-right:50px;width:250px;">
+				<f:facet name="header" style="border:1px solid grey;">
+					<p:graphicImage value="#{product.descripcion}" height="250" width="250" />
+				</f:facet>
+
+				<h:outputText value="#{product.nombre}" />
+
+				<h:outputText value="Precio: $#{product.precio}" />
+			</p:panelGrid>
+		</ui:repeat>
+	</ui:define>
 </ui:composition>

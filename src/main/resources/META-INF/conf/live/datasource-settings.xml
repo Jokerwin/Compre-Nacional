@@ -6,6 +6,9 @@
 		Note that these are merged with conf/datasource-settings.xml.
 		Settings specified here will override those.
 	</comment>
-	
-	<entry key="password">liveExamplePassword</entry>
+
+	<entry key="className">com.mysql.jdbc.jdbc2.optional.MysqlXADataSource</entry>
+	<entry key="url">jdbc:mysql://localhost:3306/comprenacional?autoReconnect=true</entry>
+	<entry key="user">root</entry>
+	<entry key="password">root</entry>
 </properties>

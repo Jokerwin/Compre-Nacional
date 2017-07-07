@@ -1,5 +1,6 @@
 package com.dacs.comprenacional.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.omnifaces.persistence.model.BaseEntity;
 import org.omnifaces.persistence.model.TimestampedEntity;
@@ -7,21 +8,23 @@ import org.omnifaces.persistence.model.TimestampedEntity;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
 import static javax.persistence.CascadeType.ALL;
+import static javax.persistence.GenerationType.IDENTITY;
 import static org.hibernate.annotations.CacheConcurrencyStrategy.TRANSACTIONAL;
 
 /**
- * Created by grego on 21/06/17.
+ * Created by José on 21/06/17.
  */
 @Entity
-public class Producto extends BaseEntity<Long> {
+public class Producto  extends TimestampedEntity<Long> {
 
     private static final long serialVersionUID = 1L;
 
-    @Id
+    @Id @GeneratedValue(strategy = IDENTITY)
     private long id;
 
     @OneToMany(cascade=CascadeType.ALL)
@@ -33,13 +36,18 @@ public class Producto extends BaseEntity<Long> {
     private @NotNull String nombre;
 
     @Column
-    private @NotNull String descripcion;
+    private String descripcion;
 
     @Column
     private @NotNull float precio;
 
+    @JsonIgnore
     @Column
-    private @NotNull int stock;
+    private @NotNull
+    Instant created;
+
+    @Column
+    private int stock;
 
     @Override
     public Long getId() {
@@ -75,6 +83,26 @@ public class Producto extends BaseEntity<Long> {
 
     public void setPrecio(float precio) {
         this.precio = precio;
+    }
+
+    @Override
+    public Instant getCreated() {
+        return created;
+    }
+
+    @Override
+    public void setLastModified(Instant instant) {
+
+    }
+
+    @Override
+    public Instant getLastModified() {
+        return null;
+    }
+
+    @Override
+    public void setCreated(Instant created) {
+        this.created = created;
     }
 
     public int getStock() {
