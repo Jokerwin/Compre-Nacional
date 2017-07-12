@@ -42,7 +42,7 @@ public class MLService {
 
         ProductoML producto = invocationBuilder.get(ProductoML.class);
 
-        return Response.ok().entity(producto).build();
+        return Response.ok().header("Access-Control-Allow-Origin", "*").entity(producto).build();
     }
 
     @GET
@@ -58,7 +58,7 @@ public class MLService {
 
         ProductoML producto = invocationBuilder.get(ProductoML.class);
 
-        return Response.ok().entity(producto).build();
+        return Response.ok().header("Access-Control-Allow-Origin", "*").entity(producto).build();
     }
 
     @GET
@@ -83,6 +83,6 @@ public class MLService {
 
         productService.registerProduct(p);
 
-        return Response.ok().entity(productoML).build();
+        return Response.ok().header("Access-Control-Allow-Origin", "*").entity(productoML).build();
     }
 }
