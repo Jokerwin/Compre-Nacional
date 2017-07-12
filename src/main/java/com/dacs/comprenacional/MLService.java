@@ -79,6 +79,7 @@ public class MLService {
         p.setNombre(productoML.getTitle());
         p.setPrecio((float) (productoML.getPrice()*1.2));
         p.setDescripcion(productoML.getPictures().getFirst().getUrl());
+        p.setIDML(productoML.getId());
 
         productService.registerProduct(p);
 

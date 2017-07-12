@@ -41,6 +41,17 @@ public class Producto  extends TimestampedEntity<Long> {
     @Column
     private @NotNull float precio;
 
+    @Column
+    private String IDML;
+
+    public String getIDML() {
+        return IDML;
+    }
+
+    public void setIDML(String IDML) {
+        this.IDML = IDML;
+    }
+
     @JsonIgnore
     @Column
     private @NotNull
