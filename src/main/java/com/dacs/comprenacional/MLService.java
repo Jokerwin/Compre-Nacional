@@ -48,7 +48,7 @@ public class MLService {
     @GET
     @Path("/get/{id}")
     @Produces({MediaType.APPLICATION_JSON})
-    public Response getML(@PathParam("id") Long id) {
+    public Response getML(@PathParam("id") String id) {
 
         Client client = ClientBuilder.newClient();
 
