@@ -52,7 +52,7 @@ public class MLService {
 
         Client client = ClientBuilder.newClient();
 
-        WebTarget productosTarget = client.target("https://api.mercadolibre.com/items/MLA"+id);
+        WebTarget productosTarget = client.target("https://api.mercadolibre.com/items/"+id);
 
         Invocation.Builder invocationBuilder = productosTarget.request(MediaType.APPLICATION_JSON);
 
