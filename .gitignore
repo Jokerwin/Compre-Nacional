@@ -204,4 +204,4 @@ Temporary Items
 # Linux trash folder which might appear on any partition or disk
 .Trash-*
 
-src/main/resources/META-INF/conf/datasource-settings.xml
+/src/main/resources/META-INF/conf/datasource-settings.xml
