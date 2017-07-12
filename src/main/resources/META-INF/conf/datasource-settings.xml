@@ -10,7 +10,7 @@
 	</comment>
 
 	<entry key="className">com.mysql.jdbc.jdbc2.optional.MysqlXADataSource</entry>
-	<entry key="url">jdbc:mysql://35.188.146.185:3306/comprenacional?zeroDateTimeBehavior=convertToNull</entry>
+	<entry key="url">jdbc:mysql://35.190.135.122:3306/comprenacional?zeroDateTimeBehavior=convertToNull&amp;autoReconnect=true</entry>
 	<entry key="user">root</entry>
 	<entry key="password">root</entry>
 </properties>
